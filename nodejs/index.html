@@ -15,23 +15,17 @@ body{
 	font-size: 48px;
 	text-align: center;
 }
-form
+#wrapper{
+	position:relative;
+	overflow:hidden;
+	margin:0 auto;}
+.row
 {
-	background: #CCC;
-	border-radius: 1em;
-	box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
-	text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
-	margin: 1em auto;
-	padding: 1em;
-	width: 40%;
-}
-form input
-{
-	display: block;
-	font-size: 40px;
-	margin: 1em auto;
-	padding: 0.5em;
-	width: 70%;
+border: 1px solid #CCC;
+background:#FFF;
+color:#000;
+margin:20px;
+font-size:18px;
 }
 	</style>
 <script>
@@ -117,10 +111,11 @@ function open_ws()
 	}
 function getMessage(data)
 	{
-    alert(var_dump(data))
+	$("#wrapper").append('<div class="row">'+data.message+'</div>');
 	}
 </script>
 </head>
 <body>
+<div id="wrapper"></div>
 </body>
 </html>
